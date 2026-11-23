@@ -4,7 +4,7 @@ import { categories, products } from "../data/products";
 export function CategoryDetail() {
   const { slug } = useParams();
   const [searchParams] = useSearchParams();
-  const sort = searchParams.get("sort"); // "price" eða null
+  const sort = searchParams.get("sort");
   const category = categories.find((c) => c.slug === slug);
 
   if (!category) {
@@ -18,7 +18,6 @@ export function CategoryDetail() {
 
   const categoryProducts = products.filter((p) => p.category === category.slug);
 
-  // Afritum fylkið með [...] svo sort breyti ekki upprunalega fylkinu
   const shownProducts =
     sort === "price"
       ? [...categoryProducts].sort((a, b) => a.price - b.price)
