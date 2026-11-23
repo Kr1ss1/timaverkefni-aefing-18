@@ -1,0 +1,104 @@
+:root {
+  --bg: linen;
+  --surface: white;
+  --text: black;
+  --muted: dimgray;
+  --accent: chocolate;
+  --accent-soft: antiquewhite;
+  --border: gainsboro;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--accent);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+nav,
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+nav a {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+nav a.active {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.card-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card,
+.product-detail {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.card:hover {
+  border-color: var(--accent);
+}
+
+.product-detail {
+  padding: 2rem;
+}
+
+.price {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.tag {
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  text-decoration: none;
+}
